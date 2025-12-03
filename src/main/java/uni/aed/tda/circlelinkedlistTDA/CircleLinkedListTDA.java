@@ -146,6 +146,11 @@ public class CircleLinkedListTDA<E> implements ListTDA<E>  {
         sb.append("] (circular)");
         return sb.toString();
     }
+    
+    @Override
+    public IteratorTDA<E> iterador(){
+        return new uni.aed.tda.linkedlistTDA.Iterador(head);
+    }
 
     @Override
     public void add(int index, E elemento) throws IndexOutOfBoundsException {
@@ -184,11 +189,6 @@ public class CircleLinkedListTDA<E> implements ListTDA<E>  {
 
     @Override
     public String toString(String patron) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public IteratorTDA<E> iterador() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }    
 

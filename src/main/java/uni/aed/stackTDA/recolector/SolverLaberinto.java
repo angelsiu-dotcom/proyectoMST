@@ -2,21 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package uni.aed.TareaLab;
+package uni.aed.stackTDA.recolector;
 
-import uni.aed.TareaLab.*;
 import uni.aed.tda.queueTDA.ArrayQueueTDA; 
 import uni.aed.tda.stackTDA.ArrayStackTDA; 
 import uni.aed.tda.stackTDA.StackTDA;
 public class SolverLaberinto {
 
     public static void main(String[] args) {
-        int[][] mapa = {
-            {0, 1, 0, 0, 0},
-            {0, 1, 0, 1, 0},
-            {0, 0, 0, 1, 0},
-            {1, 1, 0, 1, 0},
-            {0, 0, 0, 0, 0}
+        char[][] mapa = {
+            {'.','.', '.', '#','.'},
+            {'.', '#', 'P','.','.'},
+            {'.','.','.', '#', 'P'},
+            {'#', '.', '.', '.', '.'},
+            {'.', '.', '#', '.', 'B'}
         };
 
         Laberinto lab = new Laberinto(mapa);
@@ -32,7 +31,7 @@ public class SolverLaberinto {
     public static boolean ResolverLaberinto(Laberinto lab, int inicioFila, int inicioCol, int finFila, int finCol) {
         StackTDA<CeldaDelLaberinto> pila = new ArrayStackTDA<>();
         pila.push(new CeldaDelLaberinto(inicioFila, inicioCol));
-        int[][] mapa = lab.getMapa();
+        char[][] mapa = lab.getMapa();
         while (!pila.isEmpty()) {
             CeldaDelLaberinto actual = pila.peek();
 

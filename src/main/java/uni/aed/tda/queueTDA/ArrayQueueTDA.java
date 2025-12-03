@@ -84,4 +84,22 @@ public class ArrayQueueTDA<E> implements QueueTDA<E>{
         }        
         return str.toString();
     }
+    
+    @Override
+    public String toString(String patron) {
+        StringBuilder str=new StringBuilder();
+        int current=front;
+        for(int i=0;i<count;i++){
+            if(!str.isEmpty())
+                str.append(patron);
+            str.append(queue[current].toString());
+            current=(current+1)%queue.length;
+        }
+        return str.toString();
+    }   
+
+    @Override
+    public Object[] toArray() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

@@ -5,12 +5,15 @@ import uni.aed.tda.listTDA.ListTDA;
 
 public class LinkedListTDA<E> implements ListTDA<E>{
     public static final int NOT_FOUND=-1;
-    private Nodo<E> head;
-    private Nodo<E> cola;
-    private int count;
+    protected Nodo<E> head;
+    protected Nodo<E> cola;
+    protected int count;
 
     public LinkedListTDA() {
         clear();
+    }
+    public Nodo<E> getHead() {
+        return head;
     }
 
     @Override
